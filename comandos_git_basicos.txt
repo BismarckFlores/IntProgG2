@@ -1,7 +1,24 @@
+# Configuración Inicial
+git config --global user.name "Tu Nombre"   # Configura el nombre del usuario
+git config --global user.email "tuemail@example.com"   # Configura el correo del usuario
+git config --list   # Muestra la configuración actual de Git
+
+# Inicialización y Estado del Repositorio
+git init   # Inicializa un nuevo repositorio Git en la carpeta actual
+git status   # Muestra el estado de los archivos (modificados, en staging, sin seguimiento)
+git branch   # Muestra todas las ramas y marca la actual
+git branch -M main   # Cambia el nombre de la rama actual a 'main'
+
+# Trabajando con Archivos
+git add archivo   # Agrega un archivo específico al área de preparación (staging)
+git add .   # Agrega todos los archivos modificados al área de preparación
+git reset archivo   # Quita un archivo del área de preparación sin eliminar sus cambios
+git checkout -- archivo   # Revierte los cambios no confirmados en un archivo
+
 # Commits y Versionado
-git commit -m Mensaje   # Guarda los cambios en el historial con un mensaje
-git commit -am Mensaje   # Hace commit de todos los cambios en archivos rastreados
-git commit --amend -m Nuevo mensaje   # Modifica el último commit
+git commit -m "Mensaje"   # Guarda los cambios en el historial con un mensaje
+git commit -am "Mensaje"   # Hace commit de todos los cambios en archivos rastreados
+git commit --amend -m "Nuevo mensaje"   # Modifica el último commit
 git log   # Muestra el historial de commits
 
 # Trabajo con Ramas
@@ -23,13 +40,13 @@ git clone URL   # Clona un repositorio remoto en tu máquina local
 git rm archivo   # Elimina un archivo del repositorio y del sistema local
 git rm --cached archivo   # Elimina un archivo solo del repositorio, pero lo mantiene localmente
 git rm -r nombre_de_la_carpeta   # Elimina una carpeta y todo su contenido del repositorio
-git commit -m Eliminado archivo o carpeta   # Confirma la eliminación
+git commit -m "Eliminado archivo o carpeta"   # Confirma la eliminación
 git push origin nombre_de_la_rama   # Sube los cambios al repositorio remoto
 
 # Ignorar archivos en futuros commits
-echo archivo_que_no_quiero.txt  .gitignore   # Añadir archivo a .gitignore
+echo "archivo_que_no_quiero.txt" >> .gitignore   # Añadir archivo a .gitignore
 git rm --cached archivo_que_no_quiero.txt   # Eliminar archivo del repositorio pero mantenerlo localmente
-git commit -m Ignorando archivo_que_no_quiero.txt   # Confirmar el cambio
+git commit -m "Ignorando archivo_que_no_quiero.txt"   # Confirmar el cambio
 git push origin nombre_de_la_rama   # Subir los cambios
 
 # Clonar un repositorio y traer todos los archivos a tu PC
