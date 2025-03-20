@@ -1,0 +1,49 @@
+# Commits y Versionado
+git commit -m Mensaje   # Guarda los cambios en el historial con un mensaje
+git commit -am Mensaje   # Hace commit de todos los cambios en archivos rastreados
+git commit --amend -m Nuevo mensaje   # Modifica el último commit
+git log   # Muestra el historial de commits
+
+# Trabajo con Ramas
+git branch nombre_de_rama   # Crea una nueva rama
+git switch nombre_de_rama   # Cambia a una rama existente (equivalente a 'git checkout nombre_de_rama')
+git checkout -b nueva_rama   # Crea y cambia a una nueva rama en un solo paso
+git merge nombre_de_rama   # Fusiona otra rama en la actual
+git branch -d nombre_de_rama   # Borra una rama local
+
+# Trabajo con Repositorios Remotos
+git remote add origin URL   # Vincula el repositorio local con un repositorio remoto
+git remote -v   # Muestra las URLs de los repositorios remotos configurados
+git push origin nombre_de_rama   # Envía los commits de la rama actual al repositorio remoto
+git push -u origin nombre_de_rama   # Configura la rama remota como predeterminada para 'git push'
+git pull origin nombre_de_rama   # Descarga y fusiona los cambios de la rama remota con la local
+git clone URL   # Clona un repositorio remoto en tu máquina local
+
+# Eliminación de Archivos y Carpetas en GitHub
+git rm archivo   # Elimina un archivo del repositorio y del sistema local
+git rm --cached archivo   # Elimina un archivo solo del repositorio, pero lo mantiene localmente
+git rm -r nombre_de_la_carpeta   # Elimina una carpeta y todo su contenido del repositorio
+git commit -m Eliminado archivo o carpeta   # Confirma la eliminación
+git push origin nombre_de_la_rama   # Sube los cambios al repositorio remoto
+
+# Ignorar archivos en futuros commits
+echo archivo_que_no_quiero.txt  .gitignore   # Añadir archivo a .gitignore
+git rm --cached archivo_que_no_quiero.txt   # Eliminar archivo del repositorio pero mantenerlo localmente
+git commit -m Ignorando archivo_que_no_quiero.txt   # Confirmar el cambio
+git push origin nombre_de_la_rama   # Subir los cambios
+
+# Clonar un repositorio y traer todos los archivos a tu PC
+git clone URL_DEL_REPOSITORIO   # Clona un repositorio en tu máquina local
+git clone URL_DEL_REPOSITORIO mi_carpeta   # Clona el repositorio en una carpeta específica
+git pull origin main   # Trae los últimos cambios desde el repositorio remoto
+
+# Corrección y Gestión de Cambios
+git reset --soft HEAD~1   # Revierte el último commit pero mantiene los cambios en staging
+git reset --hard HEAD~1   # Revierte el último commit y borra los cambios
+git stash   # Guarda temporalmente los cambios sin hacer un commit
+git stash pop   # Restaura los cambios guardados con 'git stash'
+
+# Búsqueda y Comparación
+git diff   # Muestra las diferencias entre archivos no confirmados
+git diff --staged   # Muestra las diferencias entre el área de preparación y el último commit
+git log --oneline --graph   # Muestra el historial de commits en formato resumido y gráfico
