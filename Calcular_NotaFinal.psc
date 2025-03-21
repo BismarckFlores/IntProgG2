@@ -2,7 +2,6 @@
 //la cual tiene 3 parciales
 //y la nota final se calcula de la suma de los 3 parciales
 //dividido entre 3
-
 Algoritmo Calcular_NotaFinal
 	
 	//Sección de variables
